@@ -1,0 +1,233 @@
+{
+    "id": "csWeb Showcases",
+    "title": "csWeb Showcases",
+    "description": "csMap is developed by the Dutch Research Organisation TNO, in first instance for the Dutch Ministry of Health (VWS).",
+    "logo": "images/CommonSenseRound.png",
+    "url": "https://github.com/TNOCS/csMap",
+    "connected": true,
+    "timeLine": {
+        "start": 1375315200000,
+        "end": 1425168000000,
+        "range": 49852800000,
+        "zoomLevelName": "weeks",
+        "isLive": false,
+        "focus": 66,
+        "zoomLevel": 604800000
+    },
+    "dashboards": [
+        {
+            "id": "home",
+            "name": "Home",
+            "editMode": false,
+            "showMap": true,
+            "showTimeline": true,
+            "showLeftmenu": true,
+            "showLegend": true,
+            "showBackgroundImage": false,
+            "visiblelayers": [
+                "zorgkantoor"
+            ],
+            "widgets": null,
+            "visibleLeftMenuItems": [
+                "!lm-layers"
+            ]
+        },
+        {
+            "id": "health",
+            "name": "Health",
+            "editMode": true,
+            "showMap": true,
+            "showTimeline": false,
+            "showLeftmenu": false,
+            "showRightmenu": false,
+            "showBackgroundImage": false,
+            "visiblelayers": [
+                "zorgkantoor",
+                "Hospitals"
+            ],
+            "baselayer": "World Imagery",
+            "viewBounds": {
+                "southWest": [
+                    50.7,
+                    3.3
+                ],
+                "northEast": [
+                    53.5,
+                    7.3
+                ]
+            },
+            "widgets": [
+                {
+                    "id": "wachtlijsten",
+                    "directive": "indicators",
+                    "left": "20px",
+                    "top": "30px",
+                    "width": "250px",
+                    "height": "450px",
+                    "data": {
+                        "title": "Waiting list",
+                        "orientation": "vertical",
+                        "indicators": [
+                            {
+                                "title": "Waiting list",
+                                "visual": "bullet",
+                                "usesSelectedFeature": true,
+                                "featureTypeName": "data/resourceTypes/Zorgkantoor.json#Zorgkantoor",
+                                "propertyTypes": [
+                                    "Totaal",
+                                    "Totaal_ZZP",
+                                    "Totaal_ZZP_GGZ",
+                                    "Totaal_ZZP_GHZ",
+                                    "Totaal_ZZP_VVT"
+                                ],
+                                "dashboard": "health"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "directive": "markdownwidget",
+                    "left": "20px",
+                    "top": "500px",
+                    "width": "250px",
+                    "height": "125px",
+                    "data": {
+                        "title": "Census info",
+                        "featureTypeName": "data/resourceTypes/Zorgkantoor.json#Zorgkantoor",
+                        "dynamicProperties": [
+                            "Name",
+                            "aant_inw",
+                            "aant_man",
+                            "aant_vrouw"
+                        ],
+                        "url": "data/projects/20141104_csMap/tabel.md"
+                    }
+                }
+            ],
+            "visibleLeftMenuItems": [
+                "layers"
+            ]
+        },
+        {
+            "id": "datatable",
+            "name": "Table",
+            "editMode": false,
+            "showMap": false,
+            "showTimeline": false,
+            "showLeftmenu": false,
+            "showRightmenu": false,
+            "showBackgroundImage": false,
+            "widgets": [
+                {
+                    "id": "a098ba13-5258-4a50-4315-be6b266ecba7",
+                    "directive": "datatable",
+                    "elementId": "widget-a098ba13-5258-4a50-4315-be6b266ecba7",
+                    "enabled": true,
+                    "width": "100%",
+                    "height": "100%"
+                }
+            ],
+            "visibleLeftMenuItems": []
+        },
+        {
+            "id": "nomap",
+            "name": "No Map",
+            "editMode": false,
+            "showMap": false,
+            "showTimeline": false,
+            "showLeftmenu": true,
+            "showRightmenu": false,
+            "showBackgroundImage": true,
+            "backgroundimage": "images/amsterdam.jpg",
+            "widgets": [
+                {
+                    "id": "3654881f-0644-46ea-5133-f45c3dde8c9e",
+                    "directive": "markdownwidget",
+                    "title": "Test",
+                    "data": {
+                        "url": "data/projects/20141104_csMap/test.md",
+                        "content": "# Hello World #\n | a | b | c | d | \n |---|---|---|---| \n | 1 | 2 | 3 | 4 |"
+                    },
+                    "elementId": "widget-3654881f-0644-46ea-5133-f45c3dde8c9e",
+                    "enabled": true,
+                    "left": "10px",
+                    "top": "10px",
+                    "width": "650px",
+                    "height": "350px"
+                }
+            ]
+        }
+    ],
+    "userPrivileges": {
+        "mca": {
+            "expertMode": true
+        },
+        "heatmap": {
+            "expertMode": true
+        }
+    },
+    "expertMode": 3,
+    "baselayers": {},
+    "groups": [
+        {
+            "id": "b0e9e0cd-d6c1-44ac-8029-5c30dfe21878",
+            "title": "Features",
+            "description": "Demonstrates layers based on points",
+            "clustering": true,
+            "clusterLevel": 12,
+            "languages": {
+                "nl": {
+                    "title": "Locaties",
+                    "description": "Demonstreert kaartlagen gebaseerd op specifieke locaties"
+                },
+                "en": {
+                    "title": "Features",
+                    "description": "Demonstrates layers based on points"
+                }
+            },
+            "layers": [
+                {
+                    "id": "Hospitals",
+                    "title": "Hospitals",
+                    "description": "These are the locations of the Dutch hospitals.",
+                    "type": "geojson",
+                    "renderType": "geojson",
+                    "url": "data/projects/20141104_csMap/Ziekenhuizen.json",
+                    "typeUrl": "data/resourceTypes/resources.json",
+                    "opacity": 100,
+                    "defaultFeatureType": "Hospital",
+                    "languages": {
+                        "nl": {
+                            "title": "Ziekenhuizen",
+                            "description": "De locaties van de Nederlandse ziekenhuizen."
+                        },
+                        "en": {
+                            "title": "Hospitals",
+                            "description": "These are the locations of the Dutch hospitals."
+                        }
+                    }
+                },
+                {
+                    "id": "firestation",
+                    "title": "Fire stations",
+                    "description": "These are the locations of the fire station. (Source: IFV, BAG, 1 november 2014.)",
+                    "type": "geojson",
+                    "renderType": "geojson",
+                    "url": "data/projects/20141104_csMap/brandweerposten.json",
+                    "typeUrl": "data/resourceTypes/resources.json",
+                    "opacity": 100,
+                    "languages": {
+                        "nl": {
+                            "title": "Brandweerkazernes",
+                            "description": "De locaties van de Nederlandse brandweerkazernes en opleidingscentra (Bron: IFV, BAG, 1 november 2014)."
+                        },
+                        "en": {
+                            "title": "Fire stations",
+                            "description": "These are the locations of the fire station. (Source: IFV, BAG, 1 november 2014.)"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

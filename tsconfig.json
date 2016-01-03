@@ -1,0 +1,34 @@
+{
+    "version": "1.7.3",
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "declaration": false,
+        "noImplicitAny": false,
+        "removeComments": false,
+        "preserveConstEnums": true,
+        "noLib": false,
+        "outDir": "dist",
+        "sourceMap": false
+    }, 
+    "filesGlob": [
+        "./**/*.ts",
+        "!./dist/**/*.ts",
+        "!./node_modules/**/*.ts"
+    ],
+    "files": [
+        "./Helpers/Feature.ts",
+        "./Helpers/IGroup.ts",
+        "./Helpers/ILayer.ts",
+        "./Helpers/IProject.ts",
+        "./Helpers/IProjectLocation.ts",
+        "./Helpers/ISolution.ts",
+        "./Helpers/Utils.ts",
+        "./IOfflineSearchOptions.ts",
+        "./OfflineSearchResult.ts",
+        "./OfflineSearcher.ts",
+        "./OfflineSearchManager.ts",
+        "./Scripts/typings/node/node.d.ts",
+        "./test.ts"
+    ]
+}
