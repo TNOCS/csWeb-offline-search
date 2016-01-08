@@ -20,6 +20,7 @@ gulp.task('index', function() {
     new OfflineSearch('public/data/projects/projects.json', offlineSearchOptions);
 })
 ```
+And in your ```project.json``` you need to explicitly stated that you wish to use it by specifying ```"useOfflineSearch": true``` in the head of the file (e.g. after the id).
 
 ## Tests
 
